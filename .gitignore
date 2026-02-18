@@ -4,3 +4,9 @@ __pycache__/
 venv/
 dist/
 build/
+#Generated PDFs
+merged_*.pdf
+#Test PDFs
+sample*.pdf
+#VSCode temp
+tempCodeRunnerFile.py
