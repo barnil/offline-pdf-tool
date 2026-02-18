@@ -21,7 +21,7 @@ Currently supports merging multiple PDFs via CLI with proper validation and stru
 1. Clone the repository:
 
 ```bash
-git clone hhttps://github.com/barnil/offline-pdf-tool
+git clone https://github.com/barnil/offline-pdf-tool
 cd offline-pdf-tool
 ```
 
