@@ -10,3 +10,4 @@ merged_*.pdf
 sample*.pdf
 #VSCode temp
 tempCodeRunnerFile.py
+venv/
