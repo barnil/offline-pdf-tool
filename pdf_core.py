@@ -1,4 +1,3 @@
-import sys #for CLI lines
 from datetime import datetime #for timestamp in pdf naming
 from pypdf import PdfWriter #for writing the pdfs
 from pypdf import PdfReader #for reading the pdfs
@@ -27,7 +26,7 @@ def validate_inputs(files):
 
     return errors
 
-def mergePDF(files, output_path):
+def merge_pdfs(files, output_path):
     writer = PdfWriter()
 
     for file in files:
@@ -40,26 +39,9 @@ def mergePDF(files, output_path):
 
     writer.close()
 
-def main():
-    raw_arguments = sys.argv[1:]
-    files = [Path(arg) for arg in raw_arguments]
-
-    errors = validate_inputs(files)
-    if errors:
-        for error in errors:
-            print(error)
-        sys.exit()
-
+def generate_timestamped_filename():
     now = datetime.now()
     timestamp = now.strftime("%Y%m%d_%H%M%S")
     output_path = Path(f"merged_{timestamp}.pdf")
 
-    try:
-        mergePDF(files, output_path)
-        print(f"Your pdfs were successfully merged. The output: {output_path.name}")
-    except Exception as e:
-        print("There was an error during merging:", e)
-        sys.exit()
-
-if __name__ == "__main__":
-    main()
+    return output_path
